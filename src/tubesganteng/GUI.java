@@ -19,6 +19,8 @@ public class GUI extends javax.swing.JFrame {
     public GUI() {
         initComponents();
     }
+    TubesGanteng tg= new TubesGanteng();
+    String isi="";
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -42,7 +44,13 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel1.setText("Tugas Besar Teori Komputasi");
 
-        jLabel2.setText("String Inputan");
+        txtInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtInputActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("String");
 
         txtOutput.setColumns(20);
         txtOutput.setRows(5);
@@ -122,6 +130,11 @@ public class GUI extends javax.swing.JFrame {
         Analyze analyze = new Analyze(input);
     }//GEN-LAST:event_btnProsesActionPerformed
 
+    private void txtInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInputActionPerformed
+        // TODO add your handling code here:
+        isi = txtInput.getText();
+    }//GEN-LAST:event_txtInputActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -153,6 +166,7 @@ public class GUI extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUI().setVisible(true);
+               //txtOutput.setText();
             }
         });
     }

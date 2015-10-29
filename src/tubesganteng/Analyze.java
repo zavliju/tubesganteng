@@ -10,6 +10,7 @@ package tubesganteng;
  * @author risol_000
  */
 public class Analyze {
+    
 
     private String words;
     private String operand = "";
@@ -48,6 +49,7 @@ public class Analyze {
         } //A-Z a-z 0-9 _
         else {
             System.out.println(getOperand() + " Operand");
+            
             initiate(pos);
         }
     }
@@ -75,6 +77,7 @@ public class Analyze {
 
     public void state4(int pos) { // state grouping symbol
         System.out.println(words.charAt(pos - 1) + " Grouping Symbol");
+        operand = "";
         initiate(pos);
     }
 
